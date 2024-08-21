@@ -27,7 +27,7 @@ class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       primaryColor: Color(0xFFAEAFF7),
-      focusColor: Color(0xFF371B34),
+      focusColor: Colors.black,
       textTheme: TextTheme(
         bodySmall: GoogleFonts.alegreyaSans(
           fontSize: FontSizes.small,
