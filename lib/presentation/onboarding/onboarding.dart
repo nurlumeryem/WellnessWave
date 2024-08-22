@@ -21,13 +21,13 @@ class OnboardingScreen extends StatelessWidget {
                   height: 70,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text("HADİ BAŞLAYALIM !",
-                        style: Theme.of(context).textTheme.bodyLarge),
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Theme.of(context).canvasColor,
-                        minimumSize: Size(double.infinity, 50),
+                        minimumSize: const Size(double.infinity, 50),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12))),
+                    child: Text("HADİ BAŞLAYALIM !",
+                        style: Theme.of(context).textTheme.bodyLarge),
                   ),
                 ),
               ))

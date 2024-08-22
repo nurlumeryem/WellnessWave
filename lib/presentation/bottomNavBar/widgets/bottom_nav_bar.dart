@@ -7,8 +7,7 @@ class BottomNavBar extends StatelessWidget {
   final List<BottomNavigationBarItem> items;
   final int currentIndex;
 
-  BottomNavBar({Key? key, required this.items, required this.currentIndex})
-      : super(key: key);
+  const BottomNavBar({super.key, required this.items, required this.currentIndex});
 
   @override
   Widget build(BuildContext context) {

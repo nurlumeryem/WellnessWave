@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/meditation/presentation/pages/meditation_screen.dart';
-import 'package:flutter_application_1/features/music/presentation/pages/music_player_screen.dart';
 import 'package:flutter_application_1/features/music/presentation/pages/playlist_screen.dart';
 import 'package:flutter_application_1/presentation/bottomNavBar/bloc/navigation_bloc.dart';
 import 'package:flutter_application_1/presentation/bottomNavBar/bloc/navigation_state.dart';
@@ -8,9 +7,9 @@ import 'package:flutter_application_1/presentation/bottomNavBar/widgets/bottom_n
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({super.key});
 
-  final List<Widget> pages = [MeditationScreen(), PlaylistScreen()];
+  final List<Widget> pages = [const MeditationScreen(), PlaylistScreen()];
 
   BottomNavigationBarItem createBottomNavItem(
       {required String assetName,

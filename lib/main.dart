@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/meditation/presentation/pages/meditation_screen.dart';
 import 'package:flutter_application_1/presentation/bottomNavBar/bloc/navigation_bloc.dart';
 import 'package:flutter_application_1/presentation/homePage/home_page.dart';
-import 'package:flutter_application_1/presentation/onboarding/onboarding.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {

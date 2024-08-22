@@ -61,14 +61,14 @@ class MeditationScreen extends StatelessWidget {
                       color: DefaultColors.task1),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               Text(
                 'Bugünün Görevleri',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               TaskCard(
@@ -76,7 +76,7 @@ class MeditationScreen extends StatelessWidget {
                 description: '',
                 color: DefaultColors.task1,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               TaskCard(
@@ -84,7 +84,7 @@ class MeditationScreen extends StatelessWidget {
                 description: '',
                 color: DefaultColors.task2,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               TaskCard(

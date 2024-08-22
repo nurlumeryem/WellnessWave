@@ -19,7 +19,7 @@ class TaskCard extends StatelessWidget {
           BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
       child: Row(
         children: [
-          SizedBox(
+          const SizedBox(
             width: 5,
           ),
           Expanded(
@@ -32,7 +32,7 @@ class TaskCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Row(
@@ -43,7 +43,7 @@ class TaskCard extends StatelessWidget {
                         style: Theme.of(context).textTheme.labelSmall,
                       ),
                     ),
-                    SizedBox(height: 3),
+                    const SizedBox(height: 3),
                     // Container(
                     //   padding: EdgeInsets.all(3),
                     //   decoration: BoxDecoration(

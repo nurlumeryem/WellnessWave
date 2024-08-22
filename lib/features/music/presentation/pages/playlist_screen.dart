@@ -6,7 +6,7 @@ import 'package:flutter_application_1/features/music/presentation/pages/music_pl
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PlaylistScreen extends StatelessWidget {
-  PlaylistScreen({Key? key}) : super(key: key);
+  PlaylistScreen({super.key});
   final List<Map<String, String>> songs = [
     {
       'title': 'Rain On Glass',
@@ -45,7 +45,7 @@ class PlaylistScreen extends StatelessWidget {
       body: BlocBuilder<SongBloc, SongState>(
         builder: (context, state) {
           if (state is SongLoading) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           } else if (state is SongLoaded) {
@@ -58,7 +58,7 @@ class PlaylistScreen extends StatelessWidget {
                       leading: CircleAvatar(
                         backgroundImage: AssetImage(songs[index]['thumbnail']!),
                       ),
-                      trailing: Icon(Icons.arrow_forward_ios, size: 15),
+                      trailing: const Icon(Icons.arrow_forward_ios, size: 15),
                       title: Text(
                         state.songs[index].title,
                         style: Theme.of(context).textTheme.labelMedium,

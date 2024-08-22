@@ -5,7 +5,7 @@ import 'package:flutter_application_1/features/music/domain/entities/song.dart';
 
 class MusicPlayerScreen extends StatefulWidget {
   final Song song;
-  const MusicPlayerScreen({required this.song});
+  const MusicPlayerScreen({super.key, required this.song});
 
   @override
   State<MusicPlayerScreen> createState() => _MusicPlayerScreenState();
@@ -28,7 +28,7 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
         ),
         backgroundColor: Colors.white,
         body: Container(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           child: Column(
             children: [
               ClipRRect(
@@ -40,13 +40,13 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Text('Her anın huzuru içindeki sessizlikte gizlidir',
                   style: Theme.of(context).textTheme.labelLarge),
-              Spacer(),
-              ProgressBar(
+              const Spacer(),
+              const ProgressBar(
                   progress: Duration(seconds: 1000),
                   total: Duration(seconds: 1000)),
               Row(
@@ -54,32 +54,32 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
                 children: [
                   IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.shuffle,
                         color: DefaultColors.pink,
                       )),
                   IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.skip_previous,
                         color: DefaultColors.pink,
                       )),
                   IconButton(
                       iconSize: 80,
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.pause_circle_filled,
                         color: DefaultColors.pink,
                       )),
                   IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.skip_next,
                         color: DefaultColors.pink,
                       )),
                   IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.repeat,
                         color: DefaultColors.pink,
                       ))
