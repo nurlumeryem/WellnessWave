@@ -38,6 +38,8 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_bloc: ^8.1.6
   audio_video_progress_bar: ^2.0.3
+  http: ^1.2.2
+  just_audio: ^0.9.37
 
 dev_dependencies:
   flutter_test:
