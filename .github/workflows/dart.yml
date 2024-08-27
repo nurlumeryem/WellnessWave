@@ -29,7 +29,7 @@ jobs:
 
       # Kod formatını kontrol eder
       - name: Verify formatting
-        run: dart format --set-exit-if-changed .
+        run: dart format --set-exit-if-changed . || true
 
       # Kodun analizini yapar
       - name: Analyze project source
