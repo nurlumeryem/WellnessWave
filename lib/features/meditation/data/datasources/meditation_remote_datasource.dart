@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_application_1/features/meditation/data/models/daily_quote_model.dart';
 import 'package:flutter_application_1/features/meditation/data/models/mood_message_model.dart';
-import 'package:http/http.dart ' as http;
+import 'package:http/http.dart' as http;
 
 abstract class MeditationRemoteDataSource {
   Future<DailyQuoteModel> getDailyQuote();

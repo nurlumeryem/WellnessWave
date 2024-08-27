@@ -10,7 +10,7 @@ import 'package:flutter_application_1/features/meditation/presentation/widgets/t
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MeditationScreen extends StatelessWidget {
-  const MeditationScreen({super.key});
+  const MeditationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,7 @@ class MeditationScreen extends StatelessWidget {
               BlocBuilder<DailyQuoteBloc, DailyQuoteState>(
                   builder: (context, state) {
                 if (state is DailyQuoteLoading) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 } else if (state is DailyQuoteLoaded) {
                   return Column(
                     children: [

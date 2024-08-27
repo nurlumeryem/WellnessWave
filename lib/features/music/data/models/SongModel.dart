@@ -1,12 +1,12 @@
+// ignore: file_names
 import 'package:flutter_application_1/features/music/domain/entities/song.dart';
 
 class SongModel extends Song {
   SongModel(
-      {required int id,
-      required String title,
-      required String author,
-      required String songLink})
-      : super(id: id, title: title, author: author, songLink: songLink);
+      {required super.id,
+      required super.title,
+      required super.author,
+      required super.songLink});
 
   factory SongModel.fromJson(Map<String, dynamic> json) {
     return SongModel(
