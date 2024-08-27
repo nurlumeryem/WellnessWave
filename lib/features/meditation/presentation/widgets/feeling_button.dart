@@ -4,18 +4,20 @@ class FeelingButton extends StatelessWidget {
   final String label;
   final String image;
   final Color color;
+  final VoidCallback onTap;
 
   const FeelingButton({
     super.key,
     required this.label,
     required this.image,
     required this.color,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Column(
         children: [
           Container(
