@@ -7,7 +7,7 @@ class FontSizes {
   static const standard = 18.0;
   static const large = 20.0;
   static const extraLarge = 24.0;
-  static const doubleExtraLarge = 32.0;
+  static const doubleExtraLarge = 50.0;
 }
 
 class DefaultColors {
@@ -17,6 +17,7 @@ class DefaultColors {
   static const Color purple = Color(0xFF8E8FF8);
   static const Color orange = Color(0xFFF18F3B);
   static const Color lightteal = Color(0xFF58D5D4);
+  static const Color black = Color.fromARGB(255, 8, 8, 8);
 
   static Color task1 = Colors.pink[100]!;
   static Color task2 = Colors.orange[100]!;
@@ -55,15 +56,15 @@ class AppTheme {
             fontWeight: FontWeight.bold),
         labelSmall: GoogleFonts.alegreyaSans(
           fontSize: FontSizes.small,
-          color: Colors.black,
+          color: Colors.white,
         ),
         labelMedium: GoogleFonts.alegreyaSans(
           fontSize: FontSizes.extraLarge,
-          color: Colors.black,
+          color: Colors.white,
         ),
         labelLarge: GoogleFonts.alegreyaSans(
             fontSize: FontSizes.doubleExtraLarge,
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.bold),
       ),
     );

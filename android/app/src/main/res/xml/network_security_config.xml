@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">example.com</domain> <!-- Buraya izin vermek istediğiniz domaini ekleyin -->
+    </domain-config>
+</network-security-config>

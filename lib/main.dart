@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/meditation/presentation/bloc/daily_quote/daily_quote_bloc.dart';
+import 'package:flutter_application_1/features/meditation/presentation/bloc/daily_quote/daily_quote_event.dart';
 import 'package:flutter_application_1/features/meditation/presentation/bloc/mood_message/mood_message_bloc.dart';
 import 'package:flutter_application_1/features/music/data/datasources/song_remote_datasource.dart';
 import 'package:flutter_application_1/features/music/data/repository/song_repository_impl.dart';
@@ -11,7 +13,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'injection_container.dart' as di;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(const MyApp());
 }
 
@@ -23,14 +27,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(create: (_) => NavigationBloc()),
           BlocProvider(
-              create: (context) => SongBloc(
-                  getAllSongs: GetAllSongs(
-                      repository: SongRepositoryImpl(
-                          remoteDataSource:
-                              SongRemoteDataSourceImpl(client: http.Client()))))
-                ..add(FetchSongs())),
+            create: (_) => NavigationBloc(),
+          ),
+          BlocProvider(
+              create: (context) => di.sl<SongBloc>()..add(FetchSongs())),
+          BlocProvider(
+            create: (context) =>
+                di.sl<DailyQuoteBloc>()..add(FetchDailyQuote()),
+          ),
           BlocProvider(create: (context) => di.sl<MoodMessageBloc>())
         ],
         child: MaterialApp(

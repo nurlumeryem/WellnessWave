@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter_application_1/features/meditation/data/models/daily_quote_model.dart';
 import 'package:flutter_application_1/features/meditation/data/models/mood_message_model.dart';
 import 'package:http/http.dart' as http;
@@ -17,7 +16,7 @@ class MeditationRemoteDataSourceImpl implements MeditationRemoteDataSource {
   @override
   Future<DailyQuoteModel> getDailyQuote() async {
     final response = await client
-        .get(Uri.parse('http://192.168.1.103:8080/meditation/dailyQuote'));
+        .get(Uri.parse('http://10.0.2.2:8080/meditation/dailyQuote'));
 
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
@@ -30,7 +29,7 @@ class MeditationRemoteDataSourceImpl implements MeditationRemoteDataSource {
   @override
   Future<MoodMessageModel> getMoodMessage(String mood) async {
     final response = await client
-        .get(Uri.parse('http://192.168.1.103:8080/meditation/myMood/$mood'));
+        .get(Uri.parse('http://10.0.2.2:8080/meditation/myMood/$mood'));
 
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/homePage/home_page.dart';
 
 class OnboardingScreen extends StatelessWidget {
-  const OnboardingScreen({super.key});
+  const OnboardingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,28 +10,38 @@ class OnboardingScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-              child: Image.asset(
-            'assets/onboarding.png',
-            fit: BoxFit.fill,
-          )),
+            child: Image.asset(
+              'assets/onboarding.png',
+              fit: BoxFit.contain,
+            ),
+          ),
           Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: SizedBox(
-                  height: 70,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Theme.of(context).canvasColor,
-                        minimumSize: const Size(double.infinity, 50),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12))),
-                    child: Text("HADİ BAŞLAYALIM !",
-                        style: Theme.of(context).textTheme.bodyLarge),
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SizedBox(
+                height: 70,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => HomeScreen()),
+                        (Route<dynamic> route) => false);
+                  },
+                  child: Text(
+                    'Let us help you',
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).focusColor,
+                      minimumSize: const Size(double.infinity, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12))),
                 ),
-              ))
+              ),
+            ),
+          )
         ],
       ),
     );

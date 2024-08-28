@@ -11,22 +11,27 @@ class PlaylistScreen extends StatelessWidget {
     {
       'title': 'Rain On Glass',
       'artist': 'Rain On Glass',
-      'thumbnail': 'assets/child_with_dog.png',
+      'thumbnail': 'assets/huzur.jpg',
     },
     {
       'title': 'Gentle Breeze',
       'artist': 'Soothing Sounds',
-      'thumbnail': 'assets/child_with_dog.png',
+      'thumbnail': 'assets/huzur.jpg',
     },
     {
       'title': 'Whispering Pines',
       'artist': 'Nature Vibes',
-      'thumbnail': 'assets/child_with_dog.png',
+      'thumbnail': 'assets/huzur.jpg',
     },
     {
       'title': 'Ocean Waves Breeze',
       'artist': 'Soothing Sounds',
-      'thumbnail': 'assets/child_with_dog.png',
+      'thumbnail': 'assets/huzur.jpg',
+    },
+    {
+      'title': 'Ocean Waves Breeze',
+      'artist': 'Soothing Sounds',
+      'thumbnail': 'assets/huzur.jpg',
     }
   ];
 

@@ -10,7 +10,7 @@ import 'package:flutter_application_1/features/meditation/presentation/widgets/t
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MeditationScreen extends StatelessWidget {
-  const MeditationScreen({Key? key}) : super(key: key);
+  const MeditationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +40,9 @@ class MeditationScreen extends StatelessWidget {
                 "Tekrardan hoş geldin, Meryem!",
                 style: Theme.of(context).textTheme.titleLarge,
               ),
+              SizedBox(
+                height: 32,
+              ),
               const SizedBox(height: 32),
               Text("Bugün kendini nasıl hissediyorsun ?",
                   style: Theme.of(context).textTheme.titleMedium),
@@ -50,33 +53,51 @@ class MeditationScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   FeelingButton(
-                    label: "Mutlu",
-                    image: 'assets/happy.png',
-                    color: DefaultColors.task1,
-                    onTap: () {},
-                  ),
+                      label: "Mutlu",
+                      image: 'assets/happy.png',
+                      color: DefaultColors.task1,
+                      onTap: () {
+                        context
+                            .read<MoodMessageBloc>()
+                            .add(FetchMoodMessage('Today i am happy'));
+                      }),
                   FeelingButton(
-                    label: "Sakin",
-                    image: 'assets/calm.png',
-                    color: DefaultColors.task1,
-                    onTap: () {},
-                  ),
+                      label: "Sakin",
+                      image: 'assets/calm.png',
+                      color: DefaultColors.task1,
+                      onTap: () {
+                        context
+                            .read<MoodMessageBloc>()
+                            .add(FetchMoodMessage('Today i am calm'));
+                      }),
                   FeelingButton(
-                    label: "Relax",
-                    image: 'assets/yoga.png',
-                    color: DefaultColors.task1,
-                    onTap: () {},
-                  ),
+                      label: "Relax",
+                      image: 'assets/yoga.png',
+                      color: DefaultColors.task1,
+                      onTap: () {
+                        context
+                            .read<MoodMessageBloc>()
+                            .add(FetchMoodMessage('Today i am relax'));
+                      }),
                   FeelingButton(
-                    label: "Odaklan",
-                    image: 'assets/focus.png',
-                    color: DefaultColors.task1,
-                    onTap: () {},
-                  ),
+                      label: "Odaklan",
+                      image: 'assets/focus.png',
+                      color: DefaultColors.task1,
+                      onTap: () {
+                        context.read<MoodMessageBloc>().add(FetchMoodMessage(
+                            'Today i need to be focus but feel like i am missing something'));
+                      })
                 ],
               ),
               const SizedBox(
                 height: 24,
+              ),
+              Text(
+                'Today\'s Task',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              SizedBox(
+                height: 16,
               ),
               BlocBuilder<DailyQuoteBloc, DailyQuoteState>(
                   builder: (context, state) {
@@ -148,7 +169,7 @@ class MeditationScreen extends StatelessWidget {
                                             .read<MoodMessageBloc>()
                                             .add(ResetMoodMessage());
                                       },
-                                      child: Text('ok'))
+                                      child: const Text('ok'))
                                 ],
                               ));
                     });

@@ -13,7 +13,7 @@ class SongModel extends Song {
       id: json['id'] ?? 0,
       title: json['title'] ?? '',
       author: json['author'] ?? '',
-      songLink: json['songlink'] ?? '', // 'songlink' ile eşleştirme
+      songLink: json['songlink'] ?? '',
     );
   }
 }

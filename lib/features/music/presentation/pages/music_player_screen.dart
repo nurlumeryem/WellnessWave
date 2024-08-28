@@ -98,6 +98,10 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
               ),
               Text(widget.song.title,
                   style: Theme.of(context).textTheme.labelLarge),
+              Text(
+                'By : ${widget.song.author}',
+                style: Theme.of(context).textTheme.labelSmall,
+              ),
               const Spacer(),
               StreamBuilder<Duration>(
                   stream: _audioPlayer.positionStream,
