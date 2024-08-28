@@ -2,15 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/meditation/presentation/bloc/daily_quote/daily_quote_bloc.dart';
 import 'package:flutter_application_1/features/meditation/presentation/bloc/daily_quote/daily_quote_event.dart';
 import 'package:flutter_application_1/features/meditation/presentation/bloc/mood_message/mood_message_bloc.dart';
-import 'package:flutter_application_1/features/music/data/datasources/song_remote_datasource.dart';
-import 'package:flutter_application_1/features/music/data/repository/song_repository_impl.dart';
-import 'package:flutter_application_1/features/music/domain/usecases/get_all_songs.dart';
 import 'package:flutter_application_1/features/music/presentation/bloc/song_bloc.dart';
 import 'package:flutter_application_1/features/music/presentation/bloc/song_event.dart';
 import 'package:flutter_application_1/presentation/bottomNavBar/bloc/navigation_bloc.dart';
 import 'package:flutter_application_1/presentation/homePage/home_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:http/http.dart' as http;
 import 'injection_container.dart' as di;
 
 void main() async {
