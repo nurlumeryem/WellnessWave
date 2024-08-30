@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "538368124305",
-    "project_id": "mentalhealth-abffd",
-    "storage_bucket": "mentalhealth-abffd.appspot.com"
+    "project_number": "451897135718",
+    "project_id": "mentalhealth-dc63e",
+    "storage_bucket": "mentalhealth-dc63e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:538368124305:android:8fdb8c214435d2dc416630",
+        "mobilesdk_app_id": "1:451897135718:android:d80b8036cab032dbd6d3a7",
         "android_client_info": {
           "package_name": "com.example.flutter_application_1"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDv63f8rP4JW8j1AntNAY1rd93XDF2Pysg"
+          "current_key": "AIzaSyDrQc100Xg_xjtNGWDwNG3lottdtwJJsys"
         }
       ],
       "services": {

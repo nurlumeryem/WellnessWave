@@ -1,9 +1,8 @@
 plugins {
     id "com.android.application"
     id "kotlin-android"
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id "dev.flutter.flutter-gradle-plugin"
-    id "com.google.gms.google-services"
+    id "dev.flutter.flutter-gradle-plugin" // Flutter Gradle Plugin doğru şekilde eklenmiş olmalı
+    id 'com.google.gms.google-services' // Google Services eklentisi
 }
 
 def localProperties = new Properties()
@@ -30,13 +29,17 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 
     defaultConfig {
         applicationId = "com.example.flutter_application_1"
-        minSdk = flutter.minSdkVersion
+        minSdk = 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
@@ -44,28 +47,22 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled = false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs.debug
         }
     }
 }
 
+
 dependencies {
-    // Firebase BoM'u ekleyin (Firebase Bill of Materials)
     implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
-
-    // Kullandığınız Firebase ürünlerinin bağımlılıklarını ekleyin
-    // Örneğin, Firebase Authentication
     implementation("com.google.firebase:firebase-auth")
-
     // Diğer Firebase ürünleri için gerekli bağımlılıkları ekleyin
     // implementation("com.google.firebase:firebase-firestore")
     // implementation("com.google.firebase:firebase-analytics")
 }
-
-// Google Services plugin'i uygula
-apply(plugin = "com.google.gms.google-services")
 
 flutter {
     source = "../.."
