@@ -1,25 +1,32 @@
+import 'dart:convert';
+
 import 'package:flutter_application_1/features/meditation/domain/entities/daily_quote.dart';
 
 class DailyQuoteModel extends DailyQuote {
   DailyQuoteModel({
-    required super.morningQuote,
-    required super.noonQuote,
-    required super.eveningQuote,
-  });
+    required String morningQuote,
+    required String noonQuote,
+    required String eveningQuote,
+  }) : super(
+            morningQuote: morningQuote,
+            noonQuote: noonQuote,
+            eveningQuote: eveningQuote);
 
   factory DailyQuoteModel.fromJson(Map<String, dynamic> json) {
+    final quotes = jsonDecode(json['text']);
     return DailyQuoteModel(
-      morningQuote: json['morningQuote'] ?? '',
-      noonQuote: json['noonQuote'] ?? '',
-      eveningQuote: json['eveningQuote'] ?? '',
-    );
+        morningQuote: quotes['morningQuote'],
+        noonQuote: quotes['noonQuote'],
+        eveningQuote: quotes['eveningQuote']);
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'morningQuote': morningQuote,
-      'noonQuote': noonQuote,
-      'eveningQuote': eveningQuote,
+      'text': {
+        'morningQuote': morningQuote,
+        'noonQuote': noonQuote,
+        'eveningQuote': eveningQuote,
+      },
     };
   }
 }

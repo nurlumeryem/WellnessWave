@@ -24,7 +24,7 @@ class MeditationScreen extends StatelessWidget {
             backgroundImage: AssetImage('assets/profile.png'),
           ),
           SizedBox(
-            width: 16,
+            width: 26,
           )
         ],
       ),
@@ -36,16 +36,14 @@ class MeditationScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Tekrardan hoş geldin, Meryem!",
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
+              const Text("Tekrardan hoş geldin, Meryem!",
+                  style: TextStyle(fontSize: FontSizes.extraLarge)),
               SizedBox(
-                height: 32,
+                height: 12,
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 22),
               Text("Bugün kendini nasıl hissediyorsun ?",
-                  style: Theme.of(context).textTheme.titleMedium),
+                  style: TextStyle(fontSize: FontSizes.standard)),
               const SizedBox(
                 height: 16,
               ),
@@ -92,11 +90,11 @@ class MeditationScreen extends StatelessWidget {
               const SizedBox(
                 height: 24,
               ),
-              Text(
+              const Text(
                 'Today\'s Task',
-                style: Theme.of(context).textTheme.titleMedium,
+                style: TextStyle(fontSize: FontSizes.standard),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               BlocBuilder<DailyQuoteBloc, DailyQuoteState>(

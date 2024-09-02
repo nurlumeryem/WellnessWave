@@ -2,13 +2,15 @@
     
     <!-- INTERNET izni burada ekleniyor -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     
     <application
     android:networkSecurityConfig="@xml/network_security_config"
     android:label="flutter_application_1"
     android:name="${applicationName}"
     android:usesCleartextTraffic="true"
-    android:icon="@mipmap/ic_launcher">
+    android:icon="@mipmap/ic_launcher"
+    android:enableOnBackInvokedCallback="true">
 
         <activity
             android:name=".MainActivity"

@@ -6,7 +6,7 @@ import 'package:just_audio/just_audio.dart';
 
 class MusicPlayerScreen extends StatefulWidget {
   final Song song;
-  const MusicPlayerScreen({super.key, required this.song});
+  MusicPlayerScreen({Key? key, required this.song}) : super(key: key);
 
   @override
   State<MusicPlayerScreen> createState() => _MusicPlayerScreenState();
@@ -19,8 +19,17 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
   @override
   void initState() {
     _audioPlayer = AudioPlayer();
-    _audioPlayer.setUrl(widget.song.songLink);
+    _loadAudio();
     super.initState();
+  }
+
+  Future<void> _loadAudio() async {
+    try {
+      await _audioPlayer
+          .setAudioSource(AudioSource.asset('assets/nightfall.mp3'));
+    } catch (e) {
+      print("Error loading audio: $e");
+    }
   }
 
   @override
@@ -75,7 +84,7 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
           actions: [
             Image.asset('assets/transcript_icon.png'),
             const SizedBox(
-              width: 16,
+              width: 20,
             )
           ],
         ),
@@ -85,22 +94,23 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
           child: Column(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  'assets/huzur.jpg',
-                  height: 300,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              ),
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    widget.song.image,
+                    height: 400,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  )),
               const SizedBox(
-                height: 16,
+                height: 20,
               ),
-              Text(widget.song.title,
-                  style: Theme.of(context).textTheme.labelLarge),
               Text(
-                'By : ${widget.song.author}',
-                style: Theme.of(context).textTheme.labelSmall,
+                widget.song.title,
+                style: const TextStyle(fontSize: FontSizes.extraLarge),
+              ),
+              Text(
+                'By : ${widget.song.artist}',
+                style: const TextStyle(fontSize: FontSizes.large),
               ),
               const Spacer(),
               StreamBuilder<Duration>(
@@ -146,8 +156,8 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
                             processingState == ProcessingState.buffering) {
                           return Container(
                             margin: EdgeInsets.all(8),
-                            width: 50,
-                            height: 50,
+                            width: 100,
+                            height: 100,
                             child: CircularProgressIndicator(
                               color: DefaultColors.pink,
                             ),

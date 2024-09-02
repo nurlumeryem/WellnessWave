@@ -11,37 +11,43 @@ class PlaylistScreen extends StatelessWidget {
     {
       'title': 'Rain On Glass',
       'artist': 'Rain On Glass',
-      'thumbnail': 'assets/huzur.jpg',
+      'image': 'assets/rain.jpeg',
+      'songLink': 'assets/music/nightfall.mp3',
     },
     {
-      'title': 'Gentle Breeze',
+      'title': 'Winter Nights',
       'artist': 'Soothing Sounds',
-      'thumbnail': 'assets/huzur.jpg',
+      'image': 'assets/winter.jpeg',
     },
     {
-      'title': 'Whispering Pines',
-      'artist': 'Nature Vibes',
-      'thumbnail': 'assets/huzur.jpg',
+      'title': 'Sunset Boulevard',
+      'artist': 'Golden Melodies',
+      'image': 'assets/sunset.jpeg',
     },
     {
-      'title': 'Ocean Waves Breeze',
-      'artist': 'Soothing Sounds',
-      'thumbnail': 'assets/huzur.jpg',
+      'title': 'Summer Breeze',
+      'artist': 'Cool Vibes',
+      'image': 'assets/summer.jpeg',
     },
     {
-      'title': 'Ocean Waves Breeze',
-      'artist': 'Soothing Sounds',
-      'thumbnail': 'assets/huzur.jpg',
-    }
+      'title': 'Autumn Leaves',
+      'artist': 'Chill Music',
+      'image': 'assets/autumn.jpeg',
+    },
+    {
+      'title': 'Spring Awakening',
+      'artist': 'Melody Makers',
+      'image': 'assets/spring.jpeg',
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Chill Plalist',
-          style: Theme.of(context).textTheme.titleMedium,
+          style: TextStyle(fontSize: FontSizes.large),
         ),
         backgroundColor: DefaultColors.white,
         elevation: 1,
@@ -61,16 +67,16 @@ class PlaylistScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ListTile(
                       leading: CircleAvatar(
-                        backgroundImage: AssetImage(songs[index]['thumbnail']!),
+                        backgroundImage: AssetImage(songs[index]['image']!),
                       ),
-                      trailing: const Icon(Icons.arrow_forward_ios, size: 15),
+                      trailing: const Icon(Icons.arrow_forward_ios, size: 30),
                       title: Text(
                         state.songs[index].title,
-                        style: Theme.of(context).textTheme.labelMedium,
+                        style: const TextStyle(fontSize: FontSizes.large),
                       ),
                       subtitle: Text(
-                        state.songs[index].author,
-                        style: Theme.of(context).textTheme.labelSmall,
+                        state.songs[index].artist,
+                        style: const TextStyle(fontSize: FontSizes.standard),
                       ),
                       onTap: () {
                         Navigator.push(

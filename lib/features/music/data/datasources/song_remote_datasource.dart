@@ -14,7 +14,8 @@ class SongRemoteDataSourceImpl implements SongRemoteDataSource {
 
   @override
   Future<List<SongModel>> getAllSongs() async {
-    final response = await http.get(Uri.parse('http://10.0.2.2:8080/songs'));
+    final response =
+        await http.get(Uri.parse('http://10.0.2.2:8080/songs/all'));
 
     if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body);

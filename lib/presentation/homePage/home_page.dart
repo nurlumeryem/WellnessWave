@@ -18,10 +18,10 @@ class HomeScreen extends StatelessWidget {
     return BottomNavigationBarItem(
         icon: Image.asset(
           assetName,
-          height: 45,
+          height: 65,
           color: isActive
-              ? Theme.of(context).focusColor
-              : Theme.of(context).primaryColor,
+              ? Theme.of(context).primaryColor
+              : Theme.of(context).focusColor,
         ),
         label: '');
   }

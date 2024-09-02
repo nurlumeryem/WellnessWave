@@ -5,15 +5,16 @@ class SongModel extends Song {
   SongModel(
       {required super.id,
       required super.title,
-      required super.author,
+      required super.artist,
+      required super.image,
       required super.songLink});
 
   factory SongModel.fromJson(Map<String, dynamic> json) {
     return SongModel(
-      id: json['id'] ?? 0,
-      title: json['title'] ?? '',
-      author: json['author'] ?? '',
-      songLink: json['songlink'] ?? '',
-    );
+        id: json['id'] ?? 0,
+        title: json['title'] ?? '',
+        artist: json['artist'] ?? '',
+        image: json['image'] ?? '',
+        songLink: json['songLink'] ?? '');
   }
 }

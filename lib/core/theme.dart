@@ -4,10 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 class FontSizes {
   static const extraSmall = 14.0;
   static const small = 16.0;
-  static const standard = 18.0;
-  static const large = 20.0;
-  static const extraLarge = 24.0;
-  static const doubleExtraLarge = 50.0;
+  static const standard = 22.0;
+  static const large = 25.0;
+  static const extraLarge = 32.0;
+  static const doubleExtraLarge = 40.0;
 }
 
 class DefaultColors {
