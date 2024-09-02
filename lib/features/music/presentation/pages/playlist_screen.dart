@@ -12,32 +12,37 @@ class PlaylistScreen extends StatelessWidget {
       'title': 'Rain On Glass',
       'artist': 'Rain On Glass',
       'image': 'assets/rain.jpeg',
-      'songLink': 'assets/music/nightfall.mp3',
+      // 'songLink': 'assets/nightfall.mp3',
     },
     {
       'title': 'Winter Nights',
       'artist': 'Soothing Sounds',
       'image': 'assets/winter.jpeg',
+      //'songLink': 'assets/flow.mp3'
     },
     {
       'title': 'Sunset Boulevard',
       'artist': 'Golden Melodies',
       'image': 'assets/sunset.jpeg',
+      //'songLink': 'assets/midnight.mp3',
     },
     {
       'title': 'Summer Breeze',
       'artist': 'Cool Vibes',
       'image': 'assets/summer.jpeg',
+      //'songLink': 'assets/place.mp3',
     },
     {
       'title': 'Autumn Leaves',
       'artist': 'Chill Music',
       'image': 'assets/autumn.jpeg',
+      //'songLink': 'assets/summer.mp3',
     },
     {
       'title': 'Spring Awakening',
       'artist': 'Melody Makers',
       'image': 'assets/spring.jpeg',
+      // 'songLink': 'assets/epic.mp3',
     },
   ];
 

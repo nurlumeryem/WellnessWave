@@ -1,63 +1,58 @@
 import 'package:flutter/material.dart';
 
-class TaskCard extends StatelessWidget {
+class TaskCard extends StatefulWidget {
   final String title;
   final String description;
   final Color color;
 
-  const TaskCard(
-      {super.key,
-      required this.title,
-      required this.description,
-      required this.color});
+  const TaskCard({
+    Key? key,
+    required this.title,
+    required this.description,
+    required this.color,
+  }) : super(key: key);
+
+  @override
+  _TaskCardState createState() => _TaskCardState();
+}
+
+class _TaskCardState extends State<TaskCard> {
+  bool _isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration:
-          BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
-      child: Row(
-        children: [
-          const SizedBox(
-            width: 5,
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  children: [
-                    Flexible(
-                      child: Text(
-                        description,
-                        style: Theme.of(context).textTheme.labelSmall,
-                      ),
-                    ),
-                    const SizedBox(height: 3),
-                    // Container(
-                    //   padding: EdgeInsets.all(3),
-                    //   decoration: BoxDecoration(
-                    //     color: Colors.grey[200],
-                    //     borderRadius: BorderRadius.circular(50)
-                    //   ),
-                    //   child: Icon(Icons.arrow_forward_ios),
-                    // )
-                  ],
-                )
-              ],
+    return Card(
+      color: widget.color,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              widget.title,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
-          )
-        ],
+            const SizedBox(height: 8),
+            Text(
+              _isExpanded
+                  ? widget.description
+                  : '${widget.description.substring(0, 50)}...',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            if (widget.description.length > 50)
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      _isExpanded = !_isExpanded;
+                    });
+                  },
+                  child: Text(_isExpanded ? 'Kapat' : 'Daha Fazla'),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

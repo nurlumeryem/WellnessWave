@@ -42,7 +42,7 @@ class MeditationScreen extends StatelessWidget {
                 height: 12,
               ),
               const SizedBox(height: 22),
-              Text("Bugün kendini nasıl hissediyorsun ?",
+              Text("Bugün kendini nasıl hissediyorsun?",
                   style: TextStyle(fontSize: FontSizes.standard)),
               const SizedBox(
                 height: 16,
@@ -55,27 +55,24 @@ class MeditationScreen extends StatelessWidget {
                       image: 'assets/happy.png',
                       color: DefaultColors.task1,
                       onTap: () {
-                        context
-                            .read<MoodMessageBloc>()
-                            .add(FetchMoodMessage('Today i am happy'));
+                        context.read<MoodMessageBloc>().add(FetchMoodMessage(
+                            'Bugün kendimi mutlu hissediyorum'));
                       }),
                   FeelingButton(
                       label: "Sakin",
                       image: 'assets/calm.png',
                       color: DefaultColors.task1,
                       onTap: () {
-                        context
-                            .read<MoodMessageBloc>()
-                            .add(FetchMoodMessage('Today i am calm'));
+                        context.read<MoodMessageBloc>().add(FetchMoodMessage(
+                            'Bugün kendimi sakin hissediyorum'));
                       }),
                   FeelingButton(
                       label: "Relax",
                       image: 'assets/yoga.png',
                       color: DefaultColors.task1,
                       onTap: () {
-                        context
-                            .read<MoodMessageBloc>()
-                            .add(FetchMoodMessage('Today i am relax'));
+                        context.read<MoodMessageBloc>().add(
+                            FetchMoodMessage('Bugün rahatlamış hissediyorum'));
                       }),
                   FeelingButton(
                       label: "Odaklan",
@@ -83,16 +80,12 @@ class MeditationScreen extends StatelessWidget {
                       color: DefaultColors.task1,
                       onTap: () {
                         context.read<MoodMessageBloc>().add(FetchMoodMessage(
-                            'Today i need to be focus but feel like i am missing something'));
+                            'Bugün odaklanmam gerekiyor ama bir şeylerin eksik olduğunu hissediyorum'));
                       })
                 ],
               ),
               const SizedBox(
                 height: 24,
-              ),
-              const Text(
-                'Today\'s Task',
-                style: TextStyle(fontSize: FontSizes.standard),
               ),
               const SizedBox(
                 height: 16,
@@ -106,7 +99,8 @@ class MeditationScreen extends StatelessWidget {
                     children: [
                       TaskCard(
                         title: 'Güne Başlarken 🌅',
-                        description: '',
+                        description:
+                            'Güneş, karanlıktan tekrar yükselebileceğimizi ve kendi ışığımızı parlatabileceğimizi hatırlatan günlük bir işarettir.',
                         color: DefaultColors.task1,
                       ),
                       const SizedBox(
@@ -114,7 +108,8 @@ class MeditationScreen extends StatelessWidget {
                       ),
                       TaskCard(
                         title: 'Enerji Toplama Zamanı ☕',
-                        description: '',
+                        description:
+                            'Öğle vaktinin sessizliğinde, endişelerden kurtulmak ve anı kucaklamak için sessiz gücü bulun.',
                         color: DefaultColors.task2,
                       ),
                       const SizedBox(
@@ -122,7 +117,8 @@ class MeditationScreen extends StatelessWidget {
                       ),
                       TaskCard(
                         title: 'Günü Tamamlarken 🌙',
-                        description: '',
+                        description:
+                            'Gün sonlandığında, taşıdığınız yükleri bırakın. Elinizden geleni yaptığınızı bilerek huzura bürünün.',
                         color: DefaultColors.task3,
                       )
                     ],
@@ -137,7 +133,7 @@ class MeditationScreen extends StatelessWidget {
                 } else {
                   return Center(
                     child: Text(
-                      ' No data found ',
+                      'Veri bulunamadı',
                       style: Theme.of(context).textTheme.labelSmall,
                     ),
                   );
@@ -151,7 +147,7 @@ class MeditationScreen extends StatelessWidget {
                           context: context,
                           builder: (context) => AlertDialog(
                                 title: Text(
-                                  'My advice for you',
+                                  'Senin için tavsiyem',
                                   style:
                                       Theme.of(context).textTheme.labelMedium,
                                 ),
@@ -167,7 +163,7 @@ class MeditationScreen extends StatelessWidget {
                                             .read<MoodMessageBloc>()
                                             .add(ResetMoodMessage());
                                       },
-                                      child: const Text('ok'))
+                                      child: const Text('Tamam'))
                                 ],
                               ));
                     });

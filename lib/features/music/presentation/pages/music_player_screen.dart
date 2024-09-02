@@ -81,12 +81,6 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
               onTap: () {
                 Navigator.of(context).pop();
               }),
-          actions: [
-            Image.asset('assets/transcript_icon.png'),
-            const SizedBox(
-              width: 20,
-            )
-          ],
         ),
         backgroundColor: Colors.white,
         body: Container(
