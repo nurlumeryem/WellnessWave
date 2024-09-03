@@ -21,4 +21,13 @@ Bu proje, Flutter kullanarak geliştirilmiş kapsamlı bir mental sağlık uygul
 - **PostgreSQL**: Kullanıcı bilgileri, görevler, ruh halleri ve diğer verilerin saklandığı veritabanı olarak kullanıldı.
 - **Gemini AI**: Kullanıcılara kişiselleştirilmiş tavsiyeler ve öneriler sağlamak için yapay zeka entegrasyonu kullanıldı.
 - **Firebase**: Kullanıcı tarafından yüklenen şarkıları saklamak için kullanıldı.
-- ![Screenshot_1725383991](https://github.com/user-attachments/assets/3bdafb01-f21d-4f73-89cf-752765295c90)
+
+### Uygulama:
+
+
+![Ekran görüntüsü 2024-09-03 210646](https://github.com/user-attachments/assets/226ef210-f24b-4f07-8514-64c6abc47c0a)
+![Ekran görüntüsü 2024-09-03 211538](https://github.com/user-attachments/assets/cdb61c55-50e1-436a-9f24-f28a4d0eb9ab)
+![Ekran görüntüsü 2024-09-03 211558](https://github.com/user-attachments/assets/f4d20617-ceee-417b-b11f-8fed11e3e0b2)
+![Ekran görüntüsü 2024-09-03 211609](https://github.com/user-attachments/assets/ab78a9ea-b004-4983-97db-755bfbcf19f8)
+![Ekran görüntüsü 2024-09-03 211628](https://github.com/user-attachments/assets/501cb457-8b90-445e-adca-862d013d414b)
+![Ekran görüntüsü 2024-09-03 211628](https://github.com/user-attachments/assets/c1826eed-a904-4759-abe7-5f869fb0fd58)
