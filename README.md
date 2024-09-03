@@ -40,4 +40,4 @@ Bu proje, Flutter kullanarak geliştirilmiş kapsamlı bir mental sağlık uygul
 ![Ekran görüntüsü 2024-09-03 211558](https://github.com/user-attachments/assets/f4d20617-ceee-417b-b11f-8fed11e3e0b2)
 ![Ekran görüntüsü 2024-09-03 211609](https://github.com/user-attachments/assets/ab78a9ea-b004-4983-97db-755bfbcf19f8)
 ![Ekran görüntüsü 2024-09-03 211628](https://github.com/user-attachments/assets/501cb457-8b90-445e-adca-862d013d414b)
-![Ekran görüntüsü 2024-09-03 211628](https://github.com/user-attachments/assets/c1826eed-a904-4759-abe7-5f869fb0fd58)
+
