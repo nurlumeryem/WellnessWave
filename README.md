@@ -12,6 +12,14 @@ Bu proje, Flutter kullanarak geliştirilmiş kapsamlı bir mental sağlık uygul
 
 - **Günlük Alıntılar**: Uygulama, günün farklı zamanlarına özel ilham verici alıntılar sağlar. Bu alıntılar, kullanıcıların gün boyunca motive olmalarına yardımcı olur.
 
+- **Rahatlatıcı Müzikler**: Uygulamanın müzik sayfası, kullanıcıların dinlemek istedikleri rahatlatıcı müzikleri seçmelerini ve kontrol etmelerini sağlar. İşte müzik sayfasının özellikleri:
+
+  - **Müzik Çalar**: Kullanıcılar, müzik parçalarını çalabilir, duraklatabilir ve ilerletebilirler. 
+  - **Zamanlayıcı**: Kullanıcılar, müziğin oynatma süresini takip edebilir ve istenilen süreye göre geri veya ileri sarabilirler.
+  - **Tekrarlama**: Kullanıcılar, müziğin tekrar edilmesini sağlayabilir, bu da özellikle rahatlama ve meditasyon sırasında yararlıdır.
+  - **Şarkı Bilgileri**: Şarkı başlığı, sanatçısı ve kapak resmi uygulama ekranında görüntülenir, böylece kullanıcılar dinledikleri şarkı hakkında bilgi alabilirler.
+  - **Geri ve İleri Sarma**: Kullanıcılar, müzikte 10 saniye geri veya ileri sarma işlemi yapabilirler.
+
 - **Firebase Entegrasyonu**: Kullanıcılar, kişisel müzik koleksiyonlarını Firebase üzerinden uygulamaya yükleyebilir ve dinleyebilirler.
 
 ## Teknolojiler
@@ -21,6 +29,8 @@ Bu proje, Flutter kullanarak geliştirilmiş kapsamlı bir mental sağlık uygul
 - **PostgreSQL**: Kullanıcı bilgileri, görevler, ruh halleri ve diğer verilerin saklandığı veritabanı olarak kullanıldı.
 - **Gemini AI**: Kullanıcılara kişiselleştirilmiş tavsiyeler ve öneriler sağlamak için yapay zeka entegrasyonu kullanıldı.
 - **Firebase**: Kullanıcı tarafından yüklenen şarkıları saklamak için kullanıldı.
+- **Just Audio**: Uygulama içindeki müzik çalar için kullanıldı.
+- **Audio Video Progress Bar**: Müzik ilerleme çubuğunun görselleştirilmesi için kullanıldı.
 
 ### Uygulama:
 
