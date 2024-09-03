@@ -1,4 +1,4 @@
-# Mental Health App
+# WellnessWave App
 
 Bu proje, Flutter kullanarak geliştirilmiş kapsamlı bir mental sağlık uygulamasıdır. Uygulama, kullanıcıların ruh halleri ve görevlerini yönetmelerine yardımcı olmayı hedefler. Aşağıda uygulamanın temel özellikleri ve işleyişi hakkında detaylar bulunmaktadır.
 
