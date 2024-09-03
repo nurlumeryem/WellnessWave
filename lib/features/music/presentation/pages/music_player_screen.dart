@@ -25,8 +25,13 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
 
   Future<void> _loadAudio() async {
     try {
-      await _audioPlayer
-          .setAudioSource(AudioSource.asset('assets/nightfall.mp3'));
+      if (widget.song.songLink.startsWith('assets/')) {
+        await _audioPlayer
+            .setAudioSource(AudioSource.asset(widget.song.songLink));
+      } else {
+        await _audioPlayer
+            .setAudioSource(AudioSource.uri(Uri.parse(widget.song.songLink)));
+      }
     } catch (e) {
       print("Error loading audio: $e");
     }

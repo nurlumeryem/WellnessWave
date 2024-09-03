@@ -10,135 +10,138 @@ import 'package:flutter_application_1/features/meditation/presentation/widgets/t
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MeditationScreen extends StatelessWidget {
-  const MeditationScreen({super.key});
+  const MeditationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: DefaultColors.white,
         elevation: 0,
         leading: Image.asset('assets/menu_burger.png'),
-        actions: const [
+        actions: [
           CircleAvatar(
             backgroundImage: AssetImage('assets/profile.png'),
           ),
           SizedBox(
-            width: 26,
+            width: 16,
           )
         ],
       ),
       backgroundColor: DefaultColors.white,
       body: Container(
         padding: const EdgeInsets.all(16),
-        color: Colors.white,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Tekrardan hoş geldin, Meryem!",
-                  style: TextStyle(fontSize: FontSizes.extraLarge)),
+              Text('Welcome back, Meryem!',
+                  style: Theme.of(context).textTheme.headlineLarge),
               SizedBox(
-                height: 12,
+                height: 32,
               ),
-              const SizedBox(height: 22),
-              Text("Bugün kendini nasıl hissediyorsun?",
-                  style: TextStyle(fontSize: FontSizes.standard)),
-              const SizedBox(
+              Text(
+                'How are you feeling today  ?',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              SizedBox(
                 height: 16,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   FeelingButton(
-                      label: "Mutlu",
+                      label: 'Happy',
                       image: 'assets/happy.png',
-                      color: DefaultColors.task1,
+                      color: DefaultColors.pink,
                       onTap: () {
-                        context.read<MoodMessageBloc>().add(FetchMoodMessage(
-                            'Bugün kendimi mutlu hissediyorum'));
+                        context
+                            .read<MoodMessageBloc>()
+                            .add(FetchMoodMessage('Today i am happy'));
                       }),
                   FeelingButton(
-                      label: "Sakin",
+                      label: 'Calm',
                       image: 'assets/calm.png',
-                      color: DefaultColors.task1,
+                      color: DefaultColors.purple,
                       onTap: () {
-                        context.read<MoodMessageBloc>().add(FetchMoodMessage(
-                            'Bugün kendimi sakin hissediyorum'));
+                        context
+                            .read<MoodMessageBloc>()
+                            .add(FetchMoodMessage('Today i am calm'));
                       }),
                   FeelingButton(
-                      label: "Relax",
+                      label: 'Relax',
                       image: 'assets/yoga.png',
-                      color: DefaultColors.task1,
+                      color: DefaultColors.orange,
                       onTap: () {
-                        context.read<MoodMessageBloc>().add(
-                            FetchMoodMessage('Bugün rahatlamış hissediyorum'));
+                        context
+                            .read<MoodMessageBloc>()
+                            .add(FetchMoodMessage('Today i am relax'));
                       }),
                   FeelingButton(
-                      label: "Odaklan",
+                      label: 'Focus',
                       image: 'assets/focus.png',
-                      color: DefaultColors.task1,
+                      color: DefaultColors.lightteal,
                       onTap: () {
                         context.read<MoodMessageBloc>().add(FetchMoodMessage(
-                            'Bugün odaklanmam gerekiyor ama bir şeylerin eksik olduğunu hissediyorum'));
+                            'Today i need to be focus but feel like i am missing something'));
                       })
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 24,
               ),
-              const SizedBox(
+              SizedBox(
                 height: 16,
               ),
               BlocBuilder<DailyQuoteBloc, DailyQuoteState>(
-                  builder: (context, state) {
-                if (state is DailyQuoteLoading) {
-                  return const Center(child: CircularProgressIndicator());
-                } else if (state is DailyQuoteLoaded) {
-                  return Column(
-                    children: [
-                      TaskCard(
-                        title: 'Güne Başlarken 🌅',
-                        description:
-                            'Güneş, karanlıktan tekrar yükselebileceğimizi ve kendi ışığımızı parlatabileceğimizi hatırlatan günlük bir işarettir.',
-                        color: DefaultColors.task1,
+                builder: (context, state) {
+                  if (state is DailyQuoteLoading) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else if (state is DailyQuoteLoaded) {
+                    return Column(
+                      children: [
+                        TaskCard(
+                          title: 'Morning 🌅',
+                          description: state.dailyQuote.morningQuote,
+                          color: DefaultColors.task1,
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        TaskCard(
+                          title: 'Noon ☕ ',
+                          description: state.dailyQuote.noonQuote,
+                          color: DefaultColors.task2,
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        TaskCard(
+                          title: 'Evening 🌙',
+                          description: state.dailyQuote.eveningQuote,
+                          color: DefaultColors.task3,
+                        )
+                      ],
+                    );
+                  } else if (state is DailyQuoteError) {
+                    return Center(
+                      child: Text(
+                        state.message,
+                        style: Theme.of(context).textTheme.labelSmall,
                       ),
-                      const SizedBox(
-                        height: 16,
+                    );
+                  } else {
+                    return Center(
+                      child: Text(
+                        'No data found',
+                        style: Theme.of(context).textTheme.labelSmall,
                       ),
-                      TaskCard(
-                        title: 'Enerji Toplama Zamanı ☕',
-                        description:
-                            'Öğle vaktinin sessizliğinde, endişelerden kurtulmak ve anı kucaklamak için sessiz gücü bulun.',
-                        color: DefaultColors.task2,
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      TaskCard(
-                        title: 'Günü Tamamlarken 🌙',
-                        description:
-                            'Gün sonlandığında, taşıdığınız yükleri bırakın. Elinizden geleni yaptığınızı bilerek huzura bürünün.',
-                        color: DefaultColors.task3,
-                      )
-                    ],
-                  );
-                } else if (state is DailyQuoteError) {
-                  return Center(
-                    child: Text(
-                      state.message,
-                      style: Theme.of(context).textTheme.labelSmall,
-                    ),
-                  );
-                } else {
-                  return Center(
-                    child: Text(
-                      'Veri bulunamadı',
-                      style: Theme.of(context).textTheme.labelSmall,
-                    ),
-                  );
-                }
-              }),
+                    );
+                  }
+                },
+              ),
               BlocBuilder<MoodMessageBloc, MoodMessageState>(
                 builder: (context, state) {
                   if (state is MoodMessageLoaded) {
@@ -147,7 +150,7 @@ class MeditationScreen extends StatelessWidget {
                           context: context,
                           builder: (context) => AlertDialog(
                                 title: Text(
-                                  'Senin için tavsiyem',
+                                  'My advice for you',
                                   style:
                                       Theme.of(context).textTheme.labelMedium,
                                 ),
@@ -163,7 +166,7 @@ class MeditationScreen extends StatelessWidget {
                                             .read<MoodMessageBloc>()
                                             .add(ResetMoodMessage());
                                       },
-                                      child: const Text('Tamam'))
+                                      child: Text('ok'))
                                 ],
                               ));
                     });

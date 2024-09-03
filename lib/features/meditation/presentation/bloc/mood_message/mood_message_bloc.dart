@@ -8,20 +8,18 @@ class MoodMessageBloc extends Bloc<MoodMessageEvent, MoodMessageState> {
 
   MoodMessageBloc({required this.getMoodMessage})
       : super(MoodMessageInitial()) {
-    // Mood message fetching event
     on<FetchMoodMessage>((event, emit) async {
-      emit(MoodMessageLoading()); // Loading state
+      emit(MoodMessageLoading());
       try {
         final moodMessage = await getMoodMessage(event.mood);
-        emit(MoodMessageLoaded(moodMessage: moodMessage)); // Loaded state
+        emit(MoodMessageLoaded(moodMessage: moodMessage));
       } catch (e) {
-        emit(MoodMessageError(message: e.toString())); // Error state
+        emit(MoodMessageError(message: e.toString()));
       }
     });
 
-    // Resetting mood message event
     on<ResetMoodMessage>((event, emit) {
-      emit(MoodMessageInitial()); // Back to initial state
+      emit(MoodMessageInitial());
     });
   }
 }

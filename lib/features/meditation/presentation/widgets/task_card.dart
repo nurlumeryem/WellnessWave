@@ -48,7 +48,7 @@ class _TaskCardState extends State<TaskCard> {
                       _isExpanded = !_isExpanded;
                     });
                   },
-                  child: Text(_isExpanded ? 'Kapat' : 'Daha Fazla'),
+                  child: Text(_isExpanded ? 'Close' : 'More'),
                 ),
               ),
           ],
